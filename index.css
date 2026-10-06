@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #F8FAF8;
+  --color-surface: #FFFFFF;
+  --color-primary: #166534;
+  --color-primary-dark: #14532D;
+  --color-secondary: #16A34A;
+  --color-accent: #15803D;
+  --color-soft-green: #DCFCE7;
+  --color-nav-active-bg: #DCFCE7;
+  --color-nav-active-text: #166534;
+  --color-text: #1F2937;
+  --color-text-secondary: #64748B;
+  --color-border: #CBD5E1;
+  --color-border-light: #E2E8F0;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+  --color-info: #2563EB;
+
+  /* Brutalist Geometric Radii - 0px to 4px Max */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+
+  /* Brutalist Hard Offset Shadows */
+  --shadow-sm: 2px 2px 0px #CBD5E1;
+  --shadow-md: 3px 3px 0px #94A3B8;
+  --shadow-card: 2px 2px 0px #CBD5E1;
+  --shadow-green: 2px 2px 0px #166534;
+  --shadow-dark: 2px 2px 0px #14532D;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ========================================================
+   REUSABLE MODERN BRUTALIST AGRICULTURAL COMPONENT CLASSES
+   ======================================================== */
+
+.brutal-card,
+.saas-card,
+.agri-card {
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px #CBD5E1;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, border-color 0.1s ease-in-out;
+}
+
+.brutal-card:hover,
+.saas-card:hover,
+.agri-card-hover:hover {
+  border-color: #94A3B8;
+  box-shadow: 3px 3px 0px #94A3B8;
+}
+
+.brutal-card-green {
+  background-color: #FFFFFF;
+  border: 2px solid #166534;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0px #166534;
+}
+
+.saas-kpi-card {
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: 3px;
+  padding: 16px 18px;
+  box-shadow: 2px 2px 0px #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.saas-kpi-card:hover {
+  border-color: #166534;
+  box-shadow: 3px 3px 0px #166534;
+}
+
+/* Brutalist Inputs */
+.saas-input {
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: 3px;
+  color: var(--color-text);
+  font-size: 13px;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: border-color 0.1s, box-shadow 0.1s;
+}
+
+.saas-input:focus {
+  outline: none;
+  border-color: #166534;
+  box-shadow: 2px 2px 0px #166534;
+}
+
+/* Brutalist Buttons with Tactile Press */
+.btn-primary {
+  background-color: #166534;
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 2px solid #14532D;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  box-shadow: 2px 2px 0px #14532D;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 12px;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-primary:hover {
+  background-color: #14532D;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #0F172A;
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #166534;
+  border: 2px solid #CBD5E1;
+  font-weight: 700;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  box-shadow: 2px 2px 0px #CBD5E1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 12px;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #F8FAF8;
+  border-color: #166534;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #166534;
+}
+
+.btn-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Brutalist Structured Tables */
+.saas-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+}
+
+.saas-table th {
+  background-color: #F1F5F1;
+  color: #1F2937;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 14px;
+  border-bottom: 2px solid #CBD5E1;
+  border-right: 1px solid #E2E8F0;
+  text-align: left;
+}
+
+.saas-table th:last-child {
+  border-right: none;
+}
+
+.saas-table td {
+  padding: 12px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid #E2E8F0;
+  border-right: 1px solid #E2E8F0;
+  color: #1F2937;
+}
+
+.saas-table td:last-child {
+  border-right: none;
+}
+
+.saas-table tr:hover td {
+  background-color: #F8FAF8;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAF8;
+  border-left: 1px solid #E2E8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #166534;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
